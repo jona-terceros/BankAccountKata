@@ -29,6 +29,7 @@ export class BankAccount {
     else
     {
       this.isOpened = false;
+      this.total=0;
     }
 
   }
