@@ -14,7 +14,14 @@ export class BankAccount {
     this.isOpened = true;
   }
   close() {
-    this.isOpened = false;
+    if(this.isOpened == false)
+    {
+      throw new ValueError();
+    }
+    else
+    {
+      this.isOpened = false;
+    }
 
   }
 
