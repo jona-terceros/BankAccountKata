@@ -5,23 +5,25 @@
 
 export class BankAccount {
   constructor() {
-    this.total=0
-    //throw new Error("Remove this statement and implement this function");
+    this.isOpened = false;
+    this.total = 0;
+    
   }
-
   open() {
-    //throw new Error("Remove this statement and implement this function");
-  
-  }
 
+    this.isOpened = true;
+  }
   close() {
-    throw new Error("Remove this statement and implement this function");
+    this.isOpened = false;
+
   }
 
   deposit(amount) {
-    //throw new Error("Remove this statement and implement this function");
-    this.total=this.total+amount;
-
+    if(this.isOpened == false)
+    {
+      throw new ValueError();
+    }
+    this.total = this.total + amount;
   }
 
   withdraw(amount) {
@@ -30,10 +32,15 @@ export class BankAccount {
   }
 
   get balance() {
-    //throw new Error("Remove this statement and implement this function");
-    return this.total;
+
+  if (this.isOpened == false) {
+    throw new ValueError();
+  }
+  return this.total;
   }
 }
+
+
 
 export class ValueError extends Error {
   constructor() {
