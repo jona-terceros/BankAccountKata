@@ -47,7 +47,14 @@ export class BankAccount {
     {
       throw new ValueError();
     }
-    this.total = this.total - amount;
+    if(amount >this.total){
+      throw new ValueError();
+
+    }
+    else{
+      this.total = this.total - amount;
+    }
+    
   }
 
   get balance() {
