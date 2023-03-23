@@ -27,8 +27,11 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    //throw new Error("Remove this statement and implement this function");
-    this.total=this.total-amount; 
+    if(this.isOpened == false)
+    {
+      throw new ValueError();
+    }
+    this.total = this.total - amount;
   }
 
   get balance() {
