@@ -24,8 +24,9 @@ export class BankAccount {
 
   }
 
-  withdraw() {
-    throw new Error("Remove this statement and implement this function");
+  withdraw(amount) {
+    //throw new Error("Remove this statement and implement this function");
+    this.total=amount; 
   }
 
   get balance() {
