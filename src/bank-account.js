@@ -39,6 +39,10 @@ export class BankAccount {
     {
       throw new ValueError();
     }
+    else if(amount<0)
+    {
+      throw new ValueError();
+    }
     this.total = this.total + amount;
   }
 
