@@ -43,18 +43,17 @@ export class BankAccount {
   }
 
   withdraw(amount) {
-    if(this.isOpened == false)
-    {
+    if (this.isOpened == false) {
       throw new ValueError();
-    }
-    if(amount >this.total){
+    } else if (amount > this.total) {
       throw new ValueError();
-
-    }
-    else{
+    } else if (amount < 0) {
+      throw new ValueError();
+    } else {
       this.total = this.total - amount;
     }
-    
+
+   
   }
 
   get balance() {
